@@ -12,6 +12,7 @@ header {
     background-size: cover;
     background-position: top center;
     height: 100%;
+    position: relative;
 }
 
 header h1 {
@@ -19,12 +20,17 @@ header h1 {
     margin-bottom: 0;
 }
 
-.topcasa-banner {
+.topCasaFina-banner {
     color: #fff;
     background-color: rgba(0, 0, 0, 0.5);
     padding: 20px;
     width: 80%;
     border-radius: 8px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.3s;
 }
 
 .titulo-depoimentos {
