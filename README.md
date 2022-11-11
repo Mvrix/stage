@@ -15,3 +15,11 @@ Meu processo de aprendizado dentro da DNA Financeiro através de cursos da Alura
 
 Aprimorando os conhecimentos em `#HTML CSS BOOTSTRAP JAVASCRIPT PHP` 
 
+## 🛠️ Construído com
+
+
+* [Bootstrap](https://getbootstrap.com/)
+* [JAVASCRIPT](https://developer.mozilla.org/en-US/docs/Web/JavaScript) 
+* [PHP](https://www.php.net/)
+* [CSS]https://www.w3.org/Style/CSS/Overview.en.html)
+* [HTML](https://html5.org/)
