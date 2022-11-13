@@ -2,7 +2,8 @@
 
 $idade = 22;
 
-echo "ola mundo, \n";
+echo 'ola mundo, ';
 
+echo "\n"; //quebra de  linha
 
-echo "ola mundo, minha idade é  $idade anos";
+echo "\t"; //tab
