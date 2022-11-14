@@ -16,7 +16,8 @@ if ($idade >= 18) {
     echo "Você tem $idade e está acompanhado e pode entrar " . PHP_EOL;
 } else {
     echo "Você não pode entrar, sua idade é de apenas $idade anos.";
-}
+}   
+
 
 
 echo PHP_EOL;
