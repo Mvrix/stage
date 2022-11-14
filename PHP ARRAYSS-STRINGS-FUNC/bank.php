@@ -1,30 +1,6 @@
 <?php
 
-function sacar(array $conta, float $valorASacar) : array
-{
-    if ($valorASacar > $conta['saldo']){
-        exibeMensagem("Você não pode sacar");
-    } else{
-        $conta['saldo'] -= $valorASacar;
-    }
-    return $conta;
-}
-
-function deposito(array $conta, float $valorADepositar) : array
-{
-    if ($valorADepositar > 0){
-        $conta['saldo'] += $valorADepositar;
-        
-    } else {
-        exibeMensagem("você só pode depositar valor positivos");
-    }
-    return $conta;
-}
-
-function exibeMensagem (string $mensagem) 
-{
-    echo $mensagem . PHP_EOL;
-}
+include 'funcoes-bank.php';
 
 $contasCorrentes = [
     '123.456.789-01' => [
@@ -61,6 +37,9 @@ $contasCorrentes['123.456.789-01'] = deposito($contasCorrentes['123.456.789-01']
 
 
 
-foreach ($contasCorrentes as $cpf => $conta){
-    exibeMensagem ($cpf . " " . $conta['titular'] . " " . $conta['saldo']);
+foreach ($contasCorrentes as $cpf => $conta)
+{
+    exibeMensagem (
+        "O CPF é: $cpf, nome da pessoa {$conta['titular']} o saldo é: {$conta['saldo']}"
+    );
 }
