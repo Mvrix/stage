@@ -1,6 +1,28 @@
 <?php
 
-function exibeMensagem ($mensagem) {
+function sacar(array $conta, float $valorASacar) : array
+{
+    if ($valorASacar > $conta['saldo']){
+        exibeMensagem("Você não pode sacar");
+    } else{
+        $conta['saldo'] -= $valorASacar;
+    }
+    return $conta;
+}
+
+function deposito(array $conta, float $valorADepositar) : array
+{
+    if ($valorADepositar > 0){
+        $conta['saldo'] += $valorADepositar;
+        
+    } else {
+        exibeMensagem("você só pode depositar valor positivos");
+    }
+    return $conta;
+}
+
+function exibeMensagem (string $mensagem) 
+{
     echo $mensagem . PHP_EOL;
 }
 
@@ -31,19 +53,14 @@ $contasCorrentes ['123.456.789-05'] = [
     'saldo' => 100
 ];
 
+//saque
+$contasCorrentes['123.456.789-04'] = sacar($contasCorrentes ['123.456.789-04'], 500);
 
-if (500 > $contasCorrentes ['123.456.789-04']['saldo']){
-    exibeMensagem("Você não pode sacar");
-} else{
-    $contasCorrentes ['123.456.789-04']['saldo'] -= 500;
-}
-
+//deposito
+$contasCorrentes['123.456.789-01'] = deposito($contasCorrentes['123.456.789-01'], 9001);
 
 
-foreach ($contasCorrentes as $cpf => $conta){
-    exibeMensagem ($cpf . " " . $conta['saldo']);
-}
 
 foreach ($contasCorrentes as $cpf => $conta){
-    echo $cpf . PHP_EOL;
+    exibeMensagem ($cpf . " " . $conta['titular'] . " " . $conta['saldo']);
 }
