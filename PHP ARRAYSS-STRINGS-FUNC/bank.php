@@ -1,6 +1,6 @@
 <?php
 
-include 'funcoes-bank.php';
+require_once 'funcoes-bank.php';
 
 $contasCorrentes = [
     '123.456.789-01' => [
@@ -36,6 +36,7 @@ $contasCorrentes['123.456.789-04'] = sacar($contasCorrentes ['123.456.789-04'], 
 $contasCorrentes['123.456.789-01'] = deposito($contasCorrentes['123.456.789-01'], 9001);
 
 
+capslock($contasCorrentes['123.456.789-01']);
 
 foreach ($contasCorrentes as $cpf => $conta)
 {

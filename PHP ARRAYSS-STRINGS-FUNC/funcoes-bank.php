@@ -24,3 +24,7 @@ function exibeMensagem (string $mensagem)
 {
     echo $mensagem . PHP_EOL;
 }
+
+function capslock (array &$conta){
+    $conta['titular'] = strtoupper($conta['titular']);
+}
