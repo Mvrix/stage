@@ -16,5 +16,10 @@ $novosAlunos = [
 // $alunos2022 = array_merge($alunos2021, $novosAlunos); //subscreve chaves, se for string a chave ira sobscrever - se for int as chaves não subscreve os dados porem perde as chaves antigas
 
 $alunos2022 = [...$alunos2021, ...$novosAlunos];
+array_push($alunos2022, 'bob', 'roger', 'florinda');
+$alunos2022[] = 'Luiz';
 
-var_dump($alunos2022);
+
+echo array_unshift($alunos2022, 'Bruno', "Amanda") . PHP_EOL;
+
+echo array_pop($alunos2022) . PHP_EOL;
