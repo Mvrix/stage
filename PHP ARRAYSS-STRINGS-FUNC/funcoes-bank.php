@@ -22,9 +22,16 @@ function deposito(array $conta, float $valorADepositar) : array
 
 function exibeMensagem (string $mensagem) 
 {
-    echo $mensagem . PHP_EOL;
+    echo $mensagem . '<br>';
 }
 
 function capslock (array &$conta){
     $conta['titular'] = strtoupper($conta['titular']);
 }
+
+function exibeConta(array $conta)
+{
+    ['titular' => $titular, 'saldo' => $saldo] = $conta;
+    echo "<li>Titular: $titular. Saldo: $saldo </li>";
+}
+?>

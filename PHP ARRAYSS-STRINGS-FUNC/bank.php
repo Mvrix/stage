@@ -40,10 +40,43 @@ capslock($contasCorrentes['123.456.789-01']);
 
 unset($contasCorrentes['123.456.789-03']);
 
+echo "<ul>";
+
 foreach ($contasCorrentes as $cpf => $conta)
 {
-    ['titular' => $titular , 'saldo' => $saldo] = $conta;
-    exibeMensagem (
-        "$cpf $titular $saldo"
-    );
+    exibeConta($conta);
 }
+
+echo "</ul>";
+?>
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <h1>Contas correntes</h1>
+    <h2>feito em HTML</h2>
+    <dl>
+    <?php foreach($contasCorrentes as $cpf => $conta) { ?>
+        <dt>
+            <h3><?= $conta['titular']; ?> - <?= $cpf; ?></h3>
+        </dt>
+        <dd>Saldo: <?= $conta['saldo']; ?></dd>
+        <?php } ?>
+
+
+    </dl>
+    <script src="" async defer></script>
+</body>
+
+</html>
