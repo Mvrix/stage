@@ -23,3 +23,5 @@ echo "Mario fez a prova: " . PHP_EOL;
 var_dump(isset($notas['Mario'])); //verifica se existe na array e se é diferente de null
 
 
+echo "Alguem tirou 10?" . PHP_EOL;
+var_dump(in_array(10, $notas)); //verifica se o dado possui na array
