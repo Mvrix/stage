@@ -38,9 +38,12 @@ $contasCorrentes['123.456.789-01'] = deposito($contasCorrentes['123.456.789-01']
 
 capslock($contasCorrentes['123.456.789-01']);
 
+unset($contasCorrentes['123.456.789-03']);
+
 foreach ($contasCorrentes as $cpf => $conta)
 {
+    ['titular' => $titular , 'saldo' => $saldo] = $conta;
     exibeMensagem (
-        "O CPF é: $cpf, nome da pessoa {$conta['titular']} o saldo é: {$conta['saldo']}"
+        "$cpf $titular $saldo"
     );
 }
