@@ -5,8 +5,8 @@ use Alura\Usuario;
 
 require 'autoload.php';
 
-$usuario = new App\Alura\usuario($_POST['nome']);
-$contato = new App\Alura\Contato($_POST['email']);
+$usuario = new App\Alura\Usuario($_POST['nome'], $_POST['senha'],);
+$contato = new App\Alura\Contato($_POST['email'], $_POST['endereco'], $_POST['cep'], $_POST['telefone']);
 
 ?>
 
@@ -28,12 +28,12 @@ $contato = new App\Alura\Contato($_POST['email']);
 <p>Seguem os dados de sua conta:</p>
 <ul class="list-group">
     <li class="list-group-item">Primeiro nome: <? echo $usuario->getNome(); ?></li>
-    <li class="list-group-item">Sobrenome: <? echo $usuario->getSobrenome() ?></li>
+    <li class="list-group-item">Sobrenome: <? echo $usuario->getSobrenome(); ?></li>
     <li class="list-group-item">Usuário: <? echo $contato->getUsuario(); ?></li>
-    <li class="list-group-item">Senha: </li>
+    <li class="list-group-item">Senha:  <? echo $usuario->getSenha(); ?></li>
     <li class="list-group-item">Telefone: </li>
-    <li class="list-group-item">Email: </li>
-    <li class="list-group-item">Endereço: </li>
+    <li class="list-group-item">Email: <? echo $contato->getEmail(); ?></li>
+    <li class="list-group-item">Endereço: <? echo $contato->getEnderecoCep(); ?></li>
 </ul>
 </div>
 </body>
