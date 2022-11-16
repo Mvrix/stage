@@ -3,27 +3,29 @@
 class Conta
 {
 
-    private $cpfTitular;
-
-    private $nomeTitular;
+    private $titular;
 
     private $saldo = 0;
-    
+
     private static $numeroDeContas = 0;
-    
-    
-   
-    
-    public function  __construct(string $cpfTitular, string $nomeTitular)
+
+
+
+    public function  __construct(string $titular)
     {
-        $this->cpfTitular = $cpfTitular;
-        $this->validaNomeTitular($nomeTitular);
-        $this->nomeTitular = $nomeTitular;
+        $this->titular = $titular;
         $this->saldo = 0;
-        
+
         self::$numeroDeContas++;
     }
-    
+
+    public function __destruct()
+    {
+        if (self::$numeroDeContas > 2) {
+            echo "Há mais de uma conta ativa";
+        }
+    }
+
     public function sacar(float $valorASacar)
     {
         if ($valorASacar > $this->saldo) {
@@ -42,7 +44,7 @@ class Conta
         $this->saldo += $valorADepositar;
     }
 
-    public function transferir(float $valorAtransferir, float $contaDestino): void
+    public function transferir(float $valorAtransferir, Conta $contaDestino)
     {
         if ($valorAtransferir > $this->saldo) {
             echo "valor indisponivel";
@@ -56,29 +58,20 @@ class Conta
     {
         return $this->saldo;
     }
-    
-    public function recuperaCpfTitular(): string
-    {
-        return $this->cpfTitular;
-    }
-            
+
     public function recuperaNomeTitular(): string
     {
-        return $this->nomeTitular;
+        return $this->titular->recuperaNome();
     }
-    
-    private function validaNomeTitular(string $nomeTitular)
+
+    public function recuperaCpfTitular(): string
     {
-        if (strlen($nomeTitular) < 5) {
-            echo "Nome não é valido, precisa ter 5 caracteres";
-            exit();
-        }
+        return $this->titular->recuperaCpf();
     }
-    
-    public static function recuperaNumeroDeContas(): int 
+
+
+    public static function recuperaNumeroDeContas(): int
     {
         return self::$numeroDeContas;
     }
 }
-
-?>
