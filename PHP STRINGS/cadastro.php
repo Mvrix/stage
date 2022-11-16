@@ -1,3 +1,13 @@
+<?php
+
+use Alura\Usuario;
+
+require 'Usuario.php';
+
+$usuario = new Usuario($_POST['nome']);
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -9,18 +19,14 @@
 </head>
 <body>
 
-<?
-$nomeSobrenome = explode(" ", $_POST["nome"], 2);
-
-?>
 
 
 <div class="mx-5 my-5">
 <h1>Cadastro feito com sucesso.</h1>
 <p>Seguem os dados de sua conta:</p>
 <ul class="list-group">
-    <li class="list-group-item">Primeiro nome: <? echo $nomeSobrenome[0]; ?></li>
-    <li class="list-group-item">Sobrenome: <? echo $nomeSobrenome[1]; ?></li>
+    <li class="list-group-item">Primeiro nome: <? echo $usuario->getNome(); ?></li>
+    <li class="list-group-item">Sobrenome: <? echo $usuario->getSobrenome() ?></li>
     <li class="list-group-item">Usuário: </li>
     <li class="list-group-item">Senha: </li>
     <li class="list-group-item">Telefone: </li>
