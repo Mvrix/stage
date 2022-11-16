@@ -5,7 +5,7 @@ use Alura\Usuario;
 
 require 'autoload.php';
 
-$usuario = new App\Alura\Usuario($_POST['nome'], $_POST['senha'],);
+$usuario = new App\Alura\Usuario($_POST['nome'], $_POST['senha'], $_POST['genero']);
 $contato = new App\Alura\Contato($_POST['email'], $_POST['endereco'], $_POST['cep'], $_POST['telefone']);
 
 ?>
@@ -25,15 +25,15 @@ $contato = new App\Alura\Contato($_POST['email'], $_POST['endereco'], $_POST['ce
 
 <div class="mx-5 my-5">
 <h1>Cadastro feito com sucesso.</h1>
-<p>Seguem os dados de sua conta:</p>
+<p><? echo htmlspecialchars($usuario->getTratamento()); ?>, seguem os dados de sua conta:</p>
 <ul class="list-group">
-    <li class="list-group-item">Primeiro nome: <? echo $usuario->getNome(); ?></li>
-    <li class="list-group-item">Sobrenome: <? echo $usuario->getSobrenome(); ?></li>
-    <li class="list-group-item">Usuário: <? echo $contato->getUsuario(); ?></li>
-    <li class="list-group-item">Senha:  <? echo $usuario->getSenha(); ?></li>
-    <li class="list-group-item">Telefone: <? echo $contato->getTelefone(); ?></li>
-    <li class="list-group-item">Email: <? echo $contato->getEmail(); ?></li>
-    <li class="list-group-item">Endereço: <? echo $contato->getEnderecoCep(); ?></li>
+    <li class="list-group-item">Primeiro nome: <? echo ($usuario->getNome()); ?></li>
+    <li class="list-group-item">Sobrenome: <? echo htmlspecialchars($usuario->getSobrenome()); ?></li>
+    <li class="list-group-item">Usuário: <? echo htmlspecialchars($contato->getUsuario()); ?></li>
+    <li class="list-group-item">Senha:  <? echo htmlspecialchars($usuario->getSenha()); ?></li>
+    <li class="list-group-item">Telefone: <? echo htmlspecialchars($contato->getTelefone()); ?></li>
+    <li class="list-group-item">Email: <? echo htmlspecialchars($contato->getEmail()); ?></li>
+    <li class="list-group-item">Endereço: <? echo htmlspecialchars($contato->getEnderecoCep()); ?></li>
 </ul>
 </div>
 </body>
