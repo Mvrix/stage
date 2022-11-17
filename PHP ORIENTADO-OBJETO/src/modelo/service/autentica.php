@@ -3,9 +3,9 @@
 namespace Stage\Banco\Service;
 use Stage\Banco\Modelo\Funcionario\Diretor;
 
-class Autenticador
+class Autentica
 {
-    public function tentaLogin(Diretor $diretor, string $senha): bool
+    public function tentaLogin(Diretor $diretor, string $senha): void
     {
         if ($diretor->podeAutenticar($senha))
         {
