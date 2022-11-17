@@ -2,7 +2,7 @@
 
 namespace Stage\Banco\Modelo;
 
-class Endereco
+final class Endereco
 {
     private string $cidade;
     private string $bairro;
