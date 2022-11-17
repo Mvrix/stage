@@ -1,8 +1,6 @@
 <?php
 namespace Stage\Banco\Modelo\Funcionario;
 
-use Stage\Banco\Modelo\Funcionario\Funcionario;
-
 class Desenvolvedor extends Funcionario
 {
     public function sobeDeNivel()
@@ -10,8 +8,8 @@ class Desenvolvedor extends Funcionario
         $this->recebeAumento($this->recuperaSalario() * 0.75);
     }
 
-    public function calculaBonificacao(): float
+    public function calculoBonificacao()
     {
-        return 500.0;
+        return 500;
     }
 }

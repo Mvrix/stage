@@ -17,8 +17,3 @@ $primeiraConta->saca(300);
 echo $primeiraConta->recuperaNomeTitular() . PHP_EOL;
 echo $primeiraConta->recuperaCpf() . PHP_EOL;
 echo $primeiraConta->recuperaSaldo() . PHP_EOL;
-
-$outroEndereco  = new Endereco('A', 'B', 'R', '89');
-$outra = new Conta(new Titular(new CPF('123.654.789-01'), 'Abcdefg', $endereco));
-unset($segundaConta);
-echo Conta::recuperaNumeroDeContas();
