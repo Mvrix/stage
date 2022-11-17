@@ -2,16 +2,15 @@
 
 namespace Stage\Banco\Service;
 
-use Stage\Banco\Modelo\Funcionario;
-use Stage\Banco\Modelo\Funcionario\Funcionario as FuncionarioFuncionario;
+use Stage\Banco\Modelo\Funcionario\Funcionario;
 
-class ControladorDebonificacoes
+class ControladorDeBonificacoes
 {
-    private $totalBonificacoes = 0;
+    private float $totalBonificacoes = 0;
 
-    public function adicionaBonificacaoDe(FuncionarioFuncionario $funcionario)
+    public function adicionaBonificacaoDe(Funcionario $funcionario): void
     {
-        $funcionario->totalBonificacoes += $funcionario->calculoBonificacao();
+        $this->totalBonificacoes += $funcionario->calculaBonificacao();
     }
 
     public function recuperaTotal(): float
