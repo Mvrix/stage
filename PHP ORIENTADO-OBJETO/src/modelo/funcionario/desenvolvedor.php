@@ -1,8 +1,7 @@
 <?php
 namespace Stage\Banco\Modelo\Funcionario;
 
-use Stage\Banco\Modelo\Funcionario;
-
+use Stage\Banco\Modelo\Funcionario\Funcionario;
 
 class Desenvolvedor extends Funcionario
 {
