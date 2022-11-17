@@ -1,5 +1,7 @@
 <?php
 
+namespace Stage\Banco\Modelo;
+
 class Pessoa
 {
     protected $nome;

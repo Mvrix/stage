@@ -1,9 +1,11 @@
 <?php
 
-require_once 'src/Conta.php';
-require_once 'src/Endereco.php';
-require_once 'src/Titular.php';
-require_once 'src/CPF.php';
+require_once 'autoload.php';
+
+use Stage\Banco\Modelo\Conta\Titular;
+use Stage\Banco\Modelo\Endereco;
+use Stage\Banco\Modelo\CPF;
+use Stage\Banco\Modelo\Conta\Conta;
 
 
 $endereco = new Endereco('Sorocaba', 'um bairro', 'rua', '25');
@@ -13,7 +15,7 @@ $primeiraConta->deposita(500);
 $primeiraConta->saca(300);
 
 echo $primeiraConta->recuperaNomeTitular() . PHP_EOL;
-echo $primeiraConta->recuperaCpfTitular() . PHP_EOL;
+echo $primeiraConta->recuperaCpf() . PHP_EOL;
 echo $primeiraConta->recuperaSaldo() . PHP_EOL;
 
 $outroEndereco  = new Endereco('A', 'B', 'R', '89');

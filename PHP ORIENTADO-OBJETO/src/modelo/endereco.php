@@ -1,5 +1,7 @@
 <?php
 
+namespace Stage\Banco\Modelo;
+
 class Endereco
 {
     private string $cidade;
