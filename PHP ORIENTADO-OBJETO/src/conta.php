@@ -39,7 +39,7 @@ class Conta
         $this->saldo += $valorADepositar;
     }
 
-    public function transfere(float $valorATransferir, Conta $contaDestino): void
+    public function transfere(float $valorATransferir, Conta $contaDestino): void 
     {
         if ($valorATransferir > $this->saldo) {
             echo "Saldo indisponível";
@@ -60,7 +60,7 @@ class Conta
         return $this->titular->recuperaNome();
     }
 
-    public function recuperaCpfTitular(): string
+    public function recuperaCpf(): CPF
     {
         return $this->titular->recuperaCpf();
     }
