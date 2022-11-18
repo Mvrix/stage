@@ -23,4 +23,4 @@ Aprimorando os conhecimentos em `#HTML CSS BOOTSTRAP JAVASCRIPT PHP`
 * [PHP](https://www.php.net/)
 * [CSS](https://www.w3.org/Style/CSS/Overview.en.html)
 * [HTML](https://html5.org/)
-* [mySQL] (https://www.mysql.com/)
+* [mySQL](https://www.mysql.com/)
